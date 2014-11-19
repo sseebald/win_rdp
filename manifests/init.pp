@@ -3,13 +3,13 @@ class win_rdp {
   registry_value { 'HKLM\System\CurrentControlSet\Control\Terminal Server\fDenyTSConnections':
     ensure => present,
     type   => dword,
-    value  => "0",
+    data  => "0",
   }
 
   registry_value { 'HKLM\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp\UserAuthentication':
     ensure => present,
     type   => dword,
-    value  => "0",
+    data  => "0",
   }
 
   exec { 'turn off firewall':
